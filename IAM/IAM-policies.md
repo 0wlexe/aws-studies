@@ -1,4 +1,4 @@
-## Types of IAM Policies
+# Types of IAM Policies
 
 AWS supports six types of policies: identity-based policies, resource-based policies, IAM permissions boundaries, 
 AWS Organizations service control policies (SCPs), access control lists (ACLs), and session policies. All of these 
