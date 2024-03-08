@@ -6,3 +6,4 @@
 - [What are AWS Service Control Policies (SCPs) and How Does It Work – 2023 Guide](https://cloudpatterns.org/aws-service-control-policies-scp/)
 - [Roles terms and concepts](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#term_trust-policy)
 - [How to use trust policies with IAM roles](https://aws.amazon.com/pt/blogs/security/how-to-use-trust-policies-with-iam-roles/)
+- [Policy evaluation logic](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html)
