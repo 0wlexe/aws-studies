@@ -44,7 +44,20 @@ polices are evaluated before a request is either allowed or denied.
 
   For example, the resource-based policy below is attached to an Amazon S3 bucket. According to the policy, only the IAM user carlossalzar can access this bucket.
 
-   ![Alt text](https://osamaoraclecom.files.wordpress.com/2021/08/2021-08-15_18-12-51-1.png)
+```shell
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Principal": { "AWS": "arn:aws:iam::111122223333:user/carlossalazar" },
+            "Resource": "*"
+        }
+    ]
+}
+```
+
 
 ### Permissions boundaries
 
@@ -56,7 +69,25 @@ polices are evaluated before a request is either allowed or denied.
   To enforce this rule, you can use the customer-managed policy enclosed in the square to set the permissions boundary for the user.
   Then, add the condition block below to the IAM user’s policy. The user can never perform operations in any other service, including IAM, even if it has a permissions policy that allows it.
 
-   ![Alt text](https://osamaoraclecom.files.wordpress.com/2021/08/2021-08-15_18-12-51-2.png)
+```shell
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "cloudwatch:*".
+                "ec2:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+```shell
+"condition": {"stringEquals": {"iam:PermissionsBoundary": "arn:aws:iam::123456789012:policy/<policyname>"}}
+```
 
 ### Service control policies (SCPs)
 
